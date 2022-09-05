@@ -137,7 +137,7 @@ function App() {
   )
 
   return (
-    <div className="calculator-grid">
+    <div className="calculator-grid gap-1">
       <div className="output">
         <div className="previous-operand">
           {formatOperand(previousOperand)} {operation}
@@ -145,16 +145,11 @@ function App() {
         <div className="current-operand">{formatOperand(currentOperand)}</div>
       </div>
       <button
-        className="span-two"
-        onClick={() => dispatch({ type: ACTIONS.CLEAR })}
-      >
-        AC
-      </button>
-      <button onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>
-        DEL
-      </button>
+        className="span-two btn btn-danger fs-3"
+        onClick={() => dispatch({ type: ACTIONS.CLEAR })}>AC</button>
+      <button className="btn btn-warning fs-3" onClick={() => dispatch({ type: ACTIONS.DELETE_DIGIT })}>DEL</button>
       <OperationButton operation="÷" dispatch={dispatch} />
-      <DigitButton digit="1" dispatch={dispatch} />
+      <DigitButton  digit="1" dispatch={dispatch} />
       <DigitButton digit="2" dispatch={dispatch} />
       <DigitButton digit="3" dispatch={dispatch} />
       <OperationButton operation="*" dispatch={dispatch} />
@@ -169,7 +164,7 @@ function App() {
       <DigitButton digit="." dispatch={dispatch} />
       <DigitButton digit="0" dispatch={dispatch} />
       <button
-        className="span-two"
+        className="span-two btn btn-success fs-3"
         onClick={() => dispatch({ type: ACTIONS.EVALUATE })}
       >
         =
